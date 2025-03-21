@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nile Business Solutions - Quality & GRC Systems Experts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Nile Business Solutions Logo" class="logo-img" data-translate="logo_alt">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" data-translate="home">Home</a></li>
+                <li><a href="#services" data-translate="services">Services</a></li>
+                <li><a href="#odoo" data-translate="odoo">Odoo Solutions</a></li>
+                <li><a href="#contact" data-translate="contact">Contact</a></li>
+            </ul>
+            <button class="lang-switcher" onclick="toggleLanguage()">AR</button>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 data-translate="hero_title">Transform Your Quality Management</h1>
+            <p data-translate="hero_subtitle">Enterprise-grade GRC Solutions & Custom Odoo Implementations</p>
+            <a href="#contact" class="cta-button" data-translate="get_started">Get Started</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 data-translate="our_services">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-certificate"></i>
+                <h3 data-translate="service1_title">Quality Management Systems</h3>
+                <p data-translate="service1_desc">ISO compliance, auditing, and process optimization</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3 data-translate="service2_title">GRC Solutions</h3>
+                <p data-translate="service2_desc">Governance, Risk & Compliance frameworks</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-cube"></i>
+                <h3 data-translate="service3_title">Odoo ERP Solutions</h3>
+                <p data-translate="service3_desc">Custom modules, implementation & support</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 data-translate="contact_us">Contact Us</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Name" required data-translate="name_placeholder">
+            <input type="email" placeholder="Email" required data-translate="email_placeholder">
+            <textarea placeholder="Message" required data-translate="message_placeholder"></textarea>
+            <button type="submit" data-translate="send_button">Send Message</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

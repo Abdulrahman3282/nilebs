@@ -1,0 +1,328 @@
+/* style.css */
+:root {
+    --primary-purple: #4b2e83;
+    --secondary-purple: #7e57c2;
+    --light-purple: #f8f5ff;
+    --accent-gold: #ffd700;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+[lang="ar"] body {
+    font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+/* Header Styles */
+.header {
+    background: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow var(--transition-speed);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    transition: transform var(--transition-speed);
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-purple);
+    font-weight: 500;
+    transition: color var(--transition-speed);
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-purple);
+    transition: width var(--transition-speed);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.lang-switcher {
+    background: var(--primary-purple);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background var(--transition-speed);
+    margin-left: 2rem;
+}
+
+.lang-switcher:hover {
+    background: var(--secondary-purple);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 2rem 2rem;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+/* Get Started Button */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--accent-gold);
+    color: var(--primary-purple) !important;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255,215,0,0.4);
+}
+
+/* Services Section */
+.services {
+    padding: 5rem 2rem;
+    background: var(--light-purple);
+}
+
+.services h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-purple);
+    font-size: 2.5rem;
+}
+
+.services-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform var(--transition-speed);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card i {
+    font-size: 2.8rem;
+    color: var(--secondary-purple);
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    color: var(--primary-purple);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.service-card p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 2rem;
+    background: white;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-purple);
+    font-size: 2.5rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1.2rem;
+    border: 2px solid var(--light-purple);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color var(--transition-speed);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--secondary-purple);
+}
+
+.contact-form button {
+    background: var(--primary-purple) !important;
+    color: white !important;
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 
+        background var(--transition-speed),
+        transform var(--transition-speed);
+}
+
+.contact-form button:hover {
+    background: var(--secondary-purple) !important;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 1.5rem;
+    }
+
+    .lang-switcher {
+        margin-left: auto;
+        margin-right: 1rem;
+    }
+
+    .hero {
+        padding-top: 150px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .lang-switcher {
+        margin: 1rem auto;
+    }
+
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* RTL Specific Styles */
+[dir="rtl"] .navbar {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-links {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+[dir="rtl"] .nav-links a::after {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .service-card,
+[dir="rtl"] .contact-form {
+    text-align: right;
+}
+
+[dir="rtl"] .lang-switcher {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+[dir="rtl"] .hero-content {
+    direction: rtl;
+}
+
+[dir="rtl"] .services h2,
+[dir="rtl"] .contact h2 {
+    direction: rtl;
+}
