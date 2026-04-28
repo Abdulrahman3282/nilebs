@@ -74,26 +74,47 @@ function initScrollAnimations() {
   elements.forEach(el => observer.observe(el));
 }
 
-// Contact Form Handler
+// Contact Form Handler — Web3Forms Integration
 function initContactForm() {
   const form = document.querySelector('.contact-form form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const submitBtn = form.querySelector('.form-submit');
     const originalText = submitBtn.textContent;
-    submitBtn.textContent = '...';
+    const lang = getCurrentLang();
+
+    submitBtn.textContent = lang === 'ar' ? 'جاري الإرسال...' : 'Sending...';
     submitBtn.disabled = true;
 
-    setTimeout(() => {
-      alert(getCurrentLang() === 'ar'
-        ? 'شكراً لتواصلك معنا! سنرد عليك قريباً.'
-        : 'Thank you for reaching out! We will get back to you soon.');
-      form.reset();
+    try {
+      const formData = new FormData(form);
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert(lang === 'ar'
+          ? 'شكراً لتواصلك معنا! تم استلام رسالتك وسنرد عليك قريباً.'
+          : 'Thank you for reaching out! Your message has been received and we will get back to you soon.');
+        form.reset();
+      } else {
+        alert(lang === 'ar'
+          ? 'حدث خطأ. يرجى المحاولة مرة أخرى أو التواصل معنا مباشرة عبر البريد الإلكتروني.'
+          : 'Something went wrong. Please try again or contact us directly via email.');
+      }
+    } catch (error) {
+      alert(lang === 'ar'
+        ? 'حدث خطأ في الاتصال. يرجى التحقق من اتصالك بالإنترنت.'
+        : 'Connection error. Please check your internet connection and try again.');
+    } finally {
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
-    }, 800);
+    }
   });
 }
 
