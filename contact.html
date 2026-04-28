@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPM7H43KR4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LPM7H43KR4');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Contact Nile Business Solutions — get in touch for consulting, ERP, and analytics services.">
@@ -25,7 +16,19 @@
 <nav class="nav">
 <div class="nav-container">
 <a href="index.html" class="nav-logo">
-<img src="images/logo.png" alt="Nile Business Solutions" style="height: 100px; width: auto; background: #fff; padding: 8px; border-radius: 8px;">
+<svg viewBox="0 0 80 56" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="topR" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#2E2A78"/><stop offset="100%" stop-color="#5E2D8E"/>
+</linearGradient>
+<linearGradient id="botR" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#7B2D9E"/><stop offset="100%" stop-color="#C73E9C"/>
+</linearGradient>
+</defs>
+<path d="M 5 22 C 22 6, 45 6, 60 18 S 75 32, 75 22" stroke="url(#topR)" stroke-width="6" fill="none" stroke-linecap="round"/>
+<path d="M 5 32 C 22 22, 45 32, 60 28 S 75 18, 75 32" stroke="url(#botR)" stroke-width="6" fill="none" stroke-linecap="round"/>
+</svg>
+<span class="nav-logo-text">Nile<span class="bs"> BS</span></span>
 </a>
 <div class="nav-menu">
 <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
@@ -98,7 +101,12 @@
 </div>
 
 <div class="contact-form fade-in">
-<form>
+<form action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="5de6b307-363e-488e-aebe-9e4d00137c64">
+<input type="hidden" name="subject" value="New Contact Form Submission - Nile BS Website">
+<input type="hidden" name="from_name" value="Nile BS Website">
+<input type="checkbox" name="botcheck" style="display:none;">
+
 <h3 style="margin-bottom: 24px; color: #1F1B5C;" data-i18n="contact.form.title">Send us a message</h3>
 
 <div class="form-row">
@@ -189,8 +197,8 @@
 <div>
 <h4 data-i18n="footer.contact">Contact</h4>
 <ul>
-<li><a href="mailto:info@nilebs.com">info@nilebs.com</a></li>
-<li><a href="tel:+966000000000">+966 XX XXX XXXX</a></li>
+<li><a href="mailto:contact@nilebs.com">contact@nilebs.com</a></li>
+<li><a href="tel:+966560673736">+966 56 067 3736</a></li>
 <li><span data-i18n="contact.address.value">Riyadh, KSA</span></li>
 </ul>
 </div>
